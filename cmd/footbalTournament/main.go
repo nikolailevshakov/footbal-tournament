@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"net/http"
 
-	"golang.org/x/net/html"
+	"github.com/PuerkitoBio/goquery"
 )
 
 // + results
@@ -38,20 +38,14 @@ func main() {
 	if err != nil {
 		fmt.Println(err)
 	}
-	doc, err := html.Parse(resp.Body)
+
+	doc, err := goquery.NewDocumentFromReader(resp.Body)
 	if err != nil {
 		fmt.Println(err)
 	}
-	var f func(*html.Node)
-	f = func(n *html.Node) {
-		if n.Type == html.ElementNode && n.Data == "a" {
-			for _, a := range n.Attr {
-				if a.Key == "href" {
-					fmt.Println(a.Val)
-					break
-				}
-			}
-		}
-	}
-	f(doc)
+
+	// Find the review items
+	doc.Find("body .div[class=container]").Each(func(i int, selection *goquery.Selection) {
+		fmt.Println(selection.Text())
+	})
 }
