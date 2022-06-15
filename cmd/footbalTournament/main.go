@@ -45,7 +45,6 @@ func main() {
 	}
 
 	// Find the review items
-	doc.Find("body .div[class=container]").Each(func(i int, selection *goquery.Selection) {
-		fmt.Println(selection.Text())
-	})
+	s := doc.Find(".container__fsbody").Text()
+	fmt.Println(s)
 }
