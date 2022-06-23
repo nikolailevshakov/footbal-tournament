@@ -2023,3 +2023,5 @@ JavaScript error: https://yetantothercompany.cdn.adglare.net/tbfefad95/img/y4pp6
 
 ###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
 
+1655320800700	geckodriver	INFO	Listening on 127.0.0.1:4416
+1655320803795	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Temp\\rust_mozprofileTfYG39"

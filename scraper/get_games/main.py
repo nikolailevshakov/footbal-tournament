@@ -1,6 +1,5 @@
 import props
 from flask import Flask
-from selenium.webdriver import Firefox
 from gameFunctions import collect_games, sort_games, export_games
 
 from datetime import date

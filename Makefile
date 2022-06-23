@@ -8,3 +8,12 @@ login:
 
 build:
 	go build cmd/footbalTournament/main.go
+	
+get_games:
+	python scraper/get_games/main.py
+
+get_results:
+	python scraper/get_results/main.py
+
+temp_run:
+	python scraper/new/main.py
