@@ -4,6 +4,23 @@ import props
 from Raiting import get_raitings
 
 
+# collect game divs into the array
+def collect_games(driver):
+    all_games = []
+    for league_path in props.leagues:
+        driver.get(league_path)
+        driver.implicitly_wait(10)
+        div_games = driver.find_elements_by_class_name("event__match")
+        games = filter(None, [create_game(div_game) for div_game in div_games])
+        get_raitings(league_path, driver)
+        for game in games:
+            game.set_score()
+            all_games.append(game)
+            print(game.desc())
+    return all_games
+
+
+# Parse div of the game in to the object Game
 def create_game(div_game):
     div_game_arr = div_game.text.split("\n")
     game_date = str(date.today().year)[2:]+"."+div_game_arr[0].split(" ")[0]
@@ -11,43 +28,29 @@ def create_game(div_game):
     time = div_game_arr[0].split(" ")[1]
     team_1 = div_game_arr[1]
     team_2 = div_game_arr[2]
-    if game_date_format == date.today() + timedelta(props.days_before_saturday):
+    if game_date_format.weekday() == 5:
         game_date = "Суббота"
         return Game(game_date, time, team_1, team_2)
 
-    if game_date_format == date.today() + timedelta(props.days_before_sunday):
+    if game_date_format.weekday() == 6:
         game_date = "Воскресенье"
         return Game(game_date, time, team_1, team_2)
-
-
-def collect_games(driver):
-    all_games = []
-    for league_path in props.leagues:
-        driver.get(league_path + props.calender)
-        driver.implicitly_wait(5)
-        div_games = driver.find_elements_by_class_name("event__match")
-
-        games = filter(None, [create_game(div_game) for div_game in div_games])
-        get_raitings(league_path, driver)
-        for game in games:
-            game.set_score()
-            all_games.append(game)
-    return all_games
 
 
 def sort_games(all_games):
     top_games = []
     scores = []
-
     for game in all_games:
         scores.append(game.score)
     while len(top_games) != 10:
         max_score = max(scores)
+        print(max_score, len(scores))
         for game in all_games:
             if game.score == max_score:
                 top_games.append(game)
                 all_games.remove(game)
                 scores.remove(max_score)
+                break
     return top_games
 
 

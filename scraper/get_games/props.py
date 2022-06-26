@@ -9,6 +9,7 @@ url_russia = "https://www.flashscore.ru/football/russia/premier-league"
 url_champions = "https://www.flashscore.ru/football/europe/champions-league"
 url_europe = "https://www.flashscore.ru/football/europe/europa-league"
 
+
 leagues = [url_england, url_france, url_germany, url_spain, url_italy, url_russia]
 
 days_before_saturday = 1

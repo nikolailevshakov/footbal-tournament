@@ -16,4 +16,4 @@ get_results:
 	python scraper/get_results/main.py
 
 temp_run:
-	python scraper/new/main.py
+	python scraper/temp.py

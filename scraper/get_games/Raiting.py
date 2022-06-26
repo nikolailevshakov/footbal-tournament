@@ -1,8 +1,8 @@
 import props
+from selenium import webdriver
 
 
 def get_raitings(league_path, driver):
-    #driver = Firefox(executable_path=props.path_to_driver)
     driver.get(league_path + props.table)
     teams_div = driver.find_elements_by_class_name('tableCellParticipant__name')
     driver.implicitly_wait(10)
@@ -12,4 +12,3 @@ def get_raitings(league_path, driver):
             score += 5
         props.raitings[teams_div[i].text] = score
     print(league_path, " is done!")
-    #driver.quit()
