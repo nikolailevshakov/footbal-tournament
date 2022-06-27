@@ -169,7 +169,8 @@ console.warn: SearchSettings: "get: No settings file exists, new profile?" (new 
 1656246607126	Marionette	INFO	Listening on port 2378
 1656246607495	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
 JavaScript error: resource://gre/modules/PartitioningExceptionListService.jsm, line 69: NS_ERROR_MALFORMED_URI: Component returned failure code: 0x804b000a (NS_ERROR_MALFORMED_URI) [nsIPartitioningExceptionListObserver.onExceptionListUpdate]
-JavaScript warning: https://cdn.ftd.agency/libs/e.js, line 1656246614567	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Temp\\rust_mozprofileC3p9PN"
+JavaScript warning: https://cdn.ftd.agency/libs/e.js, line 1656246614567	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefoxJavaScript error: , line 0: NS_ERROR_NOT_AVAILABLE
+ofile" "C:\\Temp\\rust_mozprofileC3p9PN"
 1656246614973	Marionette	INFO	Marionette enabled
 console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Temp\\rust_mozprofileC3p9PN\\search.json.mozlz4", (void 0)))
 1656246617362	Marionette	INFO	Listening on port 2590
@@ -1422,17 +1423,37 @@ JavaScript warning: https://cdn.ftd.agency/libs/e.js, line 47: WEBGL_debug_rende
 JavaScript warning: https://cdn.ftd.agency/libs/e.js, line 47: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
 JavaScript warning: https://cdn.ftd.agency/libs/e.js, line 47: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
 JavaScript warning: https://cdn.ftd.agency/libs/e.js, line 47: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
-1656250913047	geckodriver	INFO	Listening on 127.0.0.1:26676
-1656250916178	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Temp\\rust_mozprofilekAdZIL"
-1656250916596	Marionette	INFO	Marionette enabled
-console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Temp\\rust_mozprofilekAdZIL\\search.json.mozlz4", (void 0)))
-1656250918861	Marionette	INFO	Listening on port 26684
-1656250919365	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
-JavaScript error: resource://gre/modules/PartitioningExceptionListService.jsm, line 69: NS_ERROR_MALFORMED_URI: Component returned failure code: 0x804b000a (NS_ERROR_MALFORMED_URI) [nsIPartitioningExceptionListObserver.onExceptionListUpdate]
-JavaScript error: https://cdn.cookielaw.org/scripttemplates/6.30.0/otBannerSdk.js, line 7: TypeError: this.selector is null
-JavaScript warning: https://cdn.ftd.agency/libs/e.js, line 47: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
-JavaScript warning: https://cdn.ftd.agency/libs/e.js, line 47: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
-JavaScript warning: https://cdn.ftd.agency/libs/e.js, line 47: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+1656258869117	Marionette	INFO	Stopped listening on port 2024
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+JavaScript error: chrome://remote/content/marionette/cert.js, line 55: NS_ERROR_NOT_AVAILABLE: Component returned failure code: 0x80040111 (NS_ERROR_NOT_AVAILABLE) [nsICertOverrideService.setDisableAllSecurityChecksAndLetAttackersInterceptMyData]
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+s://cdn.ftd.agency/libs/e.js, line 47: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
 JavaScript warning: https://cdn.ftd.agency/libs/e.js, line 47: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
 JavaScript warning: https://cdn.ftd.agency/libs/e.js, line 47: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
 JavaScript warning: https://cdn.ftd.agency/libs/e.js, line 47: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
@@ -1501,10 +1522,10 @@ JavaScript warning: https://cdn.ftd.agency/libs/e.js, line 47: WEBGL_debug_rende
 JavaScript warning: https://cdn.ftd.agency/libs/e.js, line 47: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
 JavaScript warning: https://cdn.ftd.agency/libs/e.js, line 47: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
 JavaScript warning: https://cdn.ftd.agency/libs/e.js, line 47: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
-1656251078181	geckodriver	INFO	Listening on 127.0.0.1:24869
-1656251081314	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Temp\\rust_mozprofileXrdimy"
-1656251081785	Marionette	INFO	Marionette enabled
-console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Temp\\rust_mozprofileXrdimy\\search.json.mozlz4", (void 0)))
+1656258869899	Marionette	INFO	Stopped listening on port 5188
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+JavaScript error: chrome://remote/content/marionette/cert.js, line 55: NS_ERROR_NOT_AVAILABLE: Component returned failure code: 0x80040111 (NS_ERROR_NOT_AVAILABLE) [nsICertOverrideService.setDisableAllSecurityChecksAndLetAttackersInterceptMyData]
+mp\\rust_mozprofileXrdimy\\search.json.mozlz4", (void 0)))
 1656251084386	Marionette	INFO	Listening on port 24880
 1656251084506	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
 JavaScript error: resource://gre/modules/PartitioningExceptionListService.jsm, line 69: NS_ERROR_MALFORMED_URI: Component returned failure code: 0x804b000a (NS_ERROR_MALFORMED_URI) [nsIPartitioningExceptionListObserver.onExceptionListUpdate]
@@ -1606,3 +1627,22 @@ JavaScript warning: https://cdn.ftd.agency/libs/e.js, line 47: WEBGL_debug_rende
 
 ###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
 
+1656354981893	geckodriver	INFO	Listening on 127.0.0.1:2035
+1656354985022	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Temp\\rust_mozprofileeQzRxe"
+1656354985581	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Temp\\rust_mozprofileeQzRxe\\search.json.mozlz4", (void 0)))
+1656354988016	Marionette	INFO	Listening on port 2047
+1656354988192	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/PartitioningExceptionListService.jsm, line 69: NS_ERROR_MALFORMED_URI: Component returned failure code: 0x804b000a (NS_ERROR_MALFORMED_URI) [nsIPartitioningExceptionListObserver.onExceptionListUpdate]
+JavaScript error: https://cdn.cookielaw.org/scripttemplates/6.30.0/otBannerSdk.js, line 7: TypeError: this.selector is null
+JavaScript error: https://cdn.cookielaw.org/scripttemplates/6.30.0/otBannerSdk.js, line 7: TypeError: this.selector is null
+JavaScript warning: https://cdn.ftd.agency/libs/e.js, line 47: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript error: https://www.flashscore.com.ua/x/js/core_32_2029000000.js, line 710: TypeError: setting getter-only property "message"
+JavaScript error: , line 0: AbortError: The operation was aborted. 
+JavaScript warning: https://cdn.ftd.agency/libs/e.js, line 47: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://cdn.ftd.agency/libs/e.js, line 47: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://cdn.ftd.agency/libs/e.js, line 47: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://cdn.ftd.agency/libs/e.js, line 47: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://cdn.ftd.agency/libs/e.js, line 47: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://cdn.ftd.agency/libs/e.js, line 47: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+1656355009694	Marionette	INFO	Stopped listening on port 2047

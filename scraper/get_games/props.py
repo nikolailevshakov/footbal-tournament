@@ -16,6 +16,7 @@ days_before_saturday = 1
 days_before_sunday = 2
 calender = '/fixtures/'
 table = '/standings/'
+
 path_to_driver = str(pathlib.Path(__file__).parent.resolve())[:-9] + "\geckodriver.exe"
 
 top_teams = ['Тоттенхэм', 'Манчестер Юнайтед', 'Челси', 'Ливерпуль', 'Манчестер Сити', 'Арсенал', 'Лестер'

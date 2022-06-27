@@ -1,5 +1,4 @@
 import props
-from selenium import webdriver
 
 
 def get_raitings(league_path, driver):

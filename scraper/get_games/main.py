@@ -5,7 +5,8 @@ from selenium import webdriver
 from datetime import date
 
 today_date = date.today()
-print(props.path_to_driver)
+
+
 driver = webdriver.Firefox(executable_path=props.path_to_driver)
 
 all_games = collect_games(driver)
@@ -38,4 +39,4 @@ def ping():
 
 
 if __name__ == "__main__":
-    app.run()
+    app.run(host='127.0.0.1', port=5000)
