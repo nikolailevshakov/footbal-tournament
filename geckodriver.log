@@ -170,14 +170,18 @@ console.warn: SearchSettings: "get: No settings file exists, new profile?" (new 
 1656246607495	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
 JavaScript error: resource://gre/modules/PartitioningExceptionListService.jsm, line 69: NS_ERROR_MALFORMED_URI: Component returned failure code: 0x804b000a (NS_ERROR_MALFORMED_URI) [nsIPartitioningExceptionListObserver.onExceptionListUpdate]
 JavaScript warning: https://cdn.ftd.agency/libs/e.js, line 1656246614567	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefoxJavaScript error: , line 0: NS_ERROR_NOT_AVAILABLE
-ofile" "C:\\Temp\\rust_mozprofileC3p9PN"
-1656246614973	Marionette	INFO	Marionette enabled
-console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Temp\\rust_mozprofileC3p9PN\\search.json.mozlz4", (void 0)))
-1656246617362	Marionette	INFO	Listening on port 2590
-1656246617723	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
-JavaScript error: resource://gre/modules/PartitioningExceptionListService.jsm, line 69: NS_ERROR_MALFORMED_URI: Component returned failure code: 0x804b000a (NS_ERROR_MALFORMED_URI) [nsIPartitioningExceptionListObserver.onExceptionListUpdate]
-1656246619124	Marionette	INFO	Stopped listening on port 2590
-JavaScript error: resource://gre/actors/ContentMetaChild.jsm, line 179: InvalidStateError: JSWindowActorChild.sendAsyncMessage: JSWindowActorChild cannot send at the moment
+JavaScript error: , line 0: NS_ERROR_NOT_AVAILABLE
+console.error: services.settings: 
+  Message: [Exception... "Component returned failure code: 0x804b000a (NS_ERROR_MALFORMED_URI) [nsIPartitioningExceptionListObserver.onExceptionListUpdate]"  nsresult: "0x804b000a (NS_ERROR_MALFORMED_URI)"  location: "JS frame :: resource://gre/modules/PartitioningExceptionListService.jsm :: notifyObservers :: line 69"  data: no]
+  Stack:
+    notifyObservers@resource://gre/modules/PartitioningExceptionListService.jsm:69:13
+onUpdateEntries@resource://gre/modules/PartitioningExceptionListService.jsm:124:18
+lazyInit/<@resource://gre/modules/PartitioningExceptionListService.jsm:97:12
+emit@resource://services-settings/RemoteSettingsClient.jsm:91:15
+maybeSync@resource://services-settings/RemoteSettingsClient.jsm:704:22
+
+JavaScript error: , line 0: NS_ERROR_NOT_AVAILABLE
+ cannot send at the moment
 JavaScript error: https://www.googletagmanager.com/gtm.js?id=GTM-PWJ3NQ, line 48: NS_ERROR_NOT_INITIALIZED: 
 1656247176224	geckodriver	INFO	Listening on 127.0.0.1:18999
 1656247179499	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Temp\\rust_mozprofilejHq0sP"
@@ -1646,3 +1650,65 @@ JavaScript warning: https://cdn.ftd.agency/libs/e.js, line 47: WEBGL_debug_rende
 JavaScript warning: https://cdn.ftd.agency/libs/e.js, line 47: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
 JavaScript warning: https://cdn.ftd.agency/libs/e.js, line 47: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
 1656355009694	Marionette	INFO	Stopped listening on port 2047
+1656355194462	geckodriver	INFO	Listening on 127.0.0.1:2028
+1656355197573	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Temp\\rust_mozprofileh9DjCd"
+1656355198039	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Temp\\rust_mozprofileh9DjCd\\search.json.mozlz4", (void 0)))
+1656355200170	Marionette	INFO	Listening on port 2039
+1656355200238	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/PartitioningExceptionListService.jsm, line 69: NS_ERROR_MALFORMED_URI: Component returned failure code: 0x804b000a (NS_ERROR_MALFORMED_URI) [nsIPartitioningExceptionListObserver.onExceptionListUpdate]
+JavaScript warning: https://cdn.ftd.agency/libs/e.js, line 47: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://cdn.ftd.agency/libs/e.js, line 47: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://cdn.ftd.agency/libs/e.js, line 47: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+A content process crashed and MOZ_CRASHREPORTER_SHUTDOWN is set, shutting down
+1656355216609	Marionette	INFO	Stopped listening on port 2039
+[Parent 15912, IPC I/O Parent] WARNING: file /builds/worker/checkouts/gecko/ipc/chromium/src/base/process_util_win.cc:167
+Marionette threw an error: TypeError: browsingContext.currentWindowGlobal is null
+getMarionetteCommandsActorProxy/get/<@chrome://remote/content/marionette/actors/MarionetteCommandsParent.jsm:326:29
+
+JavaScript error: chrome://remote/content/marionette/cert.js, line 55: NS_ERROR_NOT_AVAILABLE: Component returned failure code: 0x80040111 (NS_ERROR_NOT_AVAILABLE) [nsICertOverrideService.setDisableAllSecurityChecksAndLetAttackersInterceptMyData]
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+[Parent 15912, IPC I/O Parent] WARNING: pipe error: 232: file /builds/worker/checkouts/gecko/ipc/chromium/src/chrome/common/ipc_channel_win.cc:542
+A content process crashed and MOZ_CRASHREPORTER_SHUTDOWN is set, shutting down
+[Parent 15912, IPC I/O Parent] WARNING: file /builds/worker/checkouts/gecko/ipc/chromium/src/base/process_util_win.cc:167
+WARNING: A blocker encountered an error while we were waiting.
+          Blocker:  CrashService waiting for content crash ping to be sent
+          Phase: profile-before-change
+          State: (none)
+WARNING: AbortError: IOUtils: Shutting down and refusing additional I/O tasks
+WARNING: save/<@resource://gre/modules/CrashManager.jsm:1126:32
+save@resource://gre/modules/CrashManager.jsm:1133:7
+addCrash/promise<@resource://gre/modules/CrashManager.jsm:464:21
+observe@resource://gre/modules/AsyncShutdown.jsm:575:16
+
+JavaScript error: resource://gre/modules/CrashManager.jsm, line 1126: AbortError: IOUtils: Shutting down and refusing additional I/O tasks
+JavaScript error: resource://gre/modules/CrashManager.jsm, line 1126: AbortError: IOUtils: Shutting down and refusing additional I/O tasks
+JavaScript error: resource://gre/modules/CrashManager.jsm, line 1126: AbortError: IOUtils: Shutting down and refusing additional I/O tasks
+JavaScript error: resource://gre/modules/AsyncShutdown.jsm, line 718: Error: Phase "profile-before-change" is finished, it is too late to register completion condition "CrashService waiting for content crash ping to be sent"
+JavaScript error: resource://gre/modules/CrashManager.jsm, line 1126: AbortError: IOUtils: Shutting down and refusing additional I/O tasks
