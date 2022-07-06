@@ -16,12 +16,15 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from . import views
-
-
-
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.home_view),
+    path('game/', views.game_view),
+    path('history/', views.history_view),
+    path('memes/', views.memes_view),
+    path('season/', views.season_view),
     path('first_app/', include('my_app.urls'))
 ]
