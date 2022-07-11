@@ -87,6 +87,41 @@ span {
     align-items: center;
 }
 
+@media only screen and (max-width: 800px) {
+    header nav ul {
+        font-size: 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+  .home_page .main_images  {
+      flex-direction: column;
+  }
+  .home_page .main_images img {
+      margin-top: 10px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+    .home_page {
+        width: 100%;
+        padding: 60px 20px 0 20px;
+    }
+    .home_page h1 {
+        font-size: 30px;
+        color: #ffffff;
+        text-align: center;
+    }
+    header nav ul {
+        font-size: 12px;
+    }
+}
+
+.home_page .main_images img {
+    max-width: 100%;
+    height: auto;
+}
+
 .home_page h2 {
     margin-top: 50px;
     text-align: center;
