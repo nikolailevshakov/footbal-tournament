@@ -87,36 +87,6 @@ span {
     align-items: center;
 }
 
-@media only screen and (max-width: 800px) {
-    header nav ul {
-        font-size: 20px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-  .home_page .main_images  {
-      flex-direction: column;
-  }
-  .home_page .main_images img {
-      margin-top: 10px;
-  }
-}
-
-@media only screen and (max-width: 600px) {
-    .home_page {
-        width: 100%;
-        padding: 60px 20px 0 20px;
-    }
-    .home_page h1 {
-        font-size: 30px;
-        color: #ffffff;
-        text-align: center;
-    }
-    header nav ul {
-        font-size: 12px;
-    }
-}
-
 .home_page .main_images img {
     max-width: 100%;
     height: auto;
@@ -181,6 +151,44 @@ footer .down_footer {
     display: flex;
     align-items: center;
     justify-content: space-between;
+}
+
+@media only screen and (max-width: 800px) {
+    header nav ul {
+        font-size: 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+  .home_page .main_images  {
+      flex-direction: column;
+  }
+  .home_page .main_images img {
+      margin-top: 10px;
+  }
+  footer {
+    height: 100px;
+    font-size: 15px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+    .home_page {
+        width: 100%;
+        padding: 60px 20px 0 20px;
+    }
+    .home_page h1 {
+        font-size: 30px;
+        color: #ffffff;
+        text-align: center;
+    }
+    header nav ul {
+        font-size: 12px;
+    }
+    footer {
+        height: 80px;
+        font-size: 12px;
+    }
 }
                                 /* PAGE SEASON */
 /*----------------------------------------------------------------------------------------*/
@@ -303,6 +311,37 @@ footer .down_footer {
     margin-right: 5vh;
 }
 
+@media only screen and (max-width: 900px) {
+    .season .leave_forecast {
+        flex-direction: column;
+    }
+
+    .season .leave_forecast .list_games {
+        text-align: center;
+        margin: auto;
+        width: 70%;
+    }
+    .season .times p {
+        margin-bottom: 5%;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .season .leave_forecast .list_games {
+        width: 100%;
+    }
+    .season .times p {
+        margin-bottom: 2%;
+    }
+    .season .times {
+        font-size: 20px;
+    }
+    .season .table table {
+        font-size: 20px;
+        width: 80%;
+    }
+}
+
                                 /* PAGE HISTORY */
 /*----------------------------------------------------------------------------------------*/
 .slider {
@@ -393,4 +432,75 @@ footer .down_footer {
     background: url('../img_assets/all_2.jpg') center center/cover no-repeat;
     width: 100%;
     height: 100vh;
+}
+
+@media only screen and (max-width: 800px) {
+    .slider p {
+        font-size: 18px;
+    }
+    .players .names ul {
+        font-size: 25px;
+    }
+    .players .tab {
+        width: 70vh;
+        height: 350px;
+    }
+    .players .tab .text {
+        font-size: 20px;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .slider h1 {
+        font-size: 40px;
+    }
+    .slider .slider_outer .slider_item {
+        width: 90%;
+    }
+    .players {
+        padding: 0vh;
+    }
+    .players .names ul {
+        font-size: 16px;
+    }
+    .players .tab {
+        width: 40vh;
+        height: 350px;
+        font-size: 20px;
+    }
+    .players .tab .text {
+        font-size: 14px;
+    }
+}
+   /* PAGE MEMES */
+/*----------------------------------------------------------------------------------------*/
+.meme {
+    min-height: 100vh;
+    width: 100%;
+    padding: 60px 50px 0 50px;
+}
+.main_meme {
+    width: 80%;
+    padding: 10vh 5vh 10vh 5vh;
+    text-align: center;
+    margin: 0 auto;
+}
+
+@media only screen and (max-width: 800px) {
+    .meme .main_meme img {
+        width: 50vh;
+    }
+}
+
+/* PAGE GAME */
+/*----------------------------------------------------------------------------------------*/
+
+.game {
+    min-height: 70vh;
+    width: 100%;
+    padding: 20vh 5vh 10vh 5vh;
+    font-size: 30px;
+}
+.game .filler {
+    height: 50vh;
 }
