@@ -39,75 +39,40 @@
                 <h3>Оставить прогноз</h3>
                 <div class="inner_list_games">
                     <ul class='left_teams'>
-                        <li>Спартак</li>
-                        <li>Спартак</li>
-                        <li>Спартак</li>
-                        <li>Спартак</li>
-                        <li>Спартак</li>
-                        <li>Спартак</li>
-                        <li>Спартак</li>
-                        <li>Спартак</li>
-                        <li>Спартак</li>
-                        <li>Спартак</li>
+                        {% for home_team in home_teams %}
+                        <li>{{home_team}}</li>
+                        {% endfor %}
                     </ul>
                     <form action="">
                         <div class="first_column">
+                            {% for home_team in home_teams %}
                             <input type="text">
-                            <input type="text">
-                            <input type="text">
-                            <input type="text">
-                            <input type="text">
-                            <input type="text">
-                            <input type="text">
-                            <input type="text">
-                            <input type="text">
-                            <input type="text">
+                            {% endfor %}
                         </div>
                         <ul class='two_dotes'>
+                            {% for home_team in home_teams %}
                             <li> : </li>
-                            <li> : </li>
-                            <li> : </li>
-                            <li> : </li>
-                            <li> : </li>
-                            <li> : </li>
-                            <li> : </li>
-                            <li> : </li>
-                            <li> : </li>
-                            <li> : </li>
+                            {% endfor %}
                         </ul>
                         <div class="second_column">
+                            {% for guest_team in guest_teams %}
                             <input type="text">
-                            <input type="text">
-                            <input type="text">
-                            <input type="text">
-                            <input type="text">
-                            <input type="text">
-                            <input type="text">
-                            <input type="text">
-                            <input type="text">
-                            <input type="text">
+                            {% endfor %}
                         </div>
                     </form>
                     <ul class='right_teams'>
-                        <li>Локомотив</li>
-                        <li>Локомотив</li>
-                        <li>Локомотив</li>
-                        <li>Локомотив</li>
-                        <li>Локомотив</li>
-                        <li>Локомотив</li>
-                        <li>Локомотив</li>
-                        <li>Локомотив</li>
-                        <li>Локомотив</li>
-                        <li>Локомотив</li>
+                        {% for guest_team in guest_teams %}
+                        <li>{{guest_team}}</li>
+                        {% endfor %}
                     </ul>
                 </div>
                 <button>Отправить</button>
             </div>
 
             <div class="times">
-                <p>Прогнозируем на <br> 12, 13 июня</p>
+                <p>Прогнозируем на <br>{{weekend_dates}}</p>
                 <span>До конца сезона <br> </span>
-                32 дня 23 часа
+                {{season_end | timeuntil}}
             </div>
         </div>
 
@@ -120,30 +85,14 @@
                     <td>Месяц</td>
                     <td>Сезон</td>
                 </tr>
-                <tr class='first'>
-                    <td class = 'name'>Левшаков</td>
-                    <td class = 'season_result'>0</td>
-                    <td>1</td>
-                    <td class = 'week_result'>0</td>
+                {% for user_k, user_v in users.items %}
+                <tr>
+                    <td class = 'name'>{{user_k}}</td>
+                    <td class = 'season_result'>{{user_v.0}}</td>
+                    <td class = 'month_result'>{{user_v.1}}</td>
+                    <td class = 'week_result'>{{user_v.2}}</td>
                 </tr>
-                <tr class='second'>
-                    <td class = 'name'>Титов</td>
-                    <td class = 'season_result'>3</td>
-                    <td>4</td>
-                    <td class = 'week_result'>0</td>
-                </tr>
-                <tr class='third'>
-                    <td class = 'name'>Пасюк</td>
-                    <td class = 'season_result'>6</td>
-                    <td>8</td>
-                    <td class = 'week_result'>0</td>
-                </tr>
-                <tr class='fourth'>
-                    <td class = 'name'>Рыкованов</td>
-                    <td class = 'season_result'>9</td>
-                    <td>8</td>
-                    <td class = 'week_result'>0</td>
-                </tr>
+                {% endfor %}
             </table>
             <button>Оставить коммент</button>
         </div>
