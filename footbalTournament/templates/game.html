@@ -1,37 +1,8 @@
+{% extends 'base.html' %}
+
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Manrope&display=swap" rel="stylesheet">
-    <title>Турнир прогнозистов</title>
-     <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
-</head>
-<body>
-    <header>
-        <nav>
-            <ul>
-                <li>
-                    <a href="/">Главная</a>
-                </li>
-                <li>
-                    <a href="/season">Сезон</a>
-                </li>
-                <li>
-                    <a href="/history">История</a>
-                </li>
-                <li>
-                    <a href="/memes">Мемы</a>
-                </li>
-                <li>
-                    <a href=#><span>Игра</span></a>
-                </li>
-            </ul>
-        </nav>
-        <div class='login_mark'>
-        </div>
-    </header>
+
+{% block content %}
 
     <section class="game">
         <div class="filler">
@@ -39,39 +10,4 @@
         </div>
     </section>
 
-    <footer>
-        <div class="up_footer">
-            <div class="name">Турнир Прогнозистов</div>
-            <ul>
-                <li>
-                    <a href="/">Главная</a>
-                </li>
-                <li>
-                    <a href="/season">Сезон</a>
-                </li>
-                <li>
-                    <a href="/history">История</a>
-                </li>
-                <li>
-                    <a href="/memes">Мемы</a>
-                </li>
-                <li>
-                    <a href="/game">Игра</a>
-                </li>
-            </ul>
-            <a href="https://vk.com/turnirprognoz2019" target= '_blank'>
-                <img src="{% static 'img_assets/vk.svg' %}" alt="ВК">
-            </a>
-        </div>
-        <span></span>
-        <div class="down_footer">
-            <div class="tribbute">
-                Photo by Timothy Tan on Unsplash
-            </div>
-            <div class="rights">
-                Все права защищены, 2020
-            </div>
-        </div>
-    </footer>
-</body>
-</html>
+{% endblock %}
