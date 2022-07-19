@@ -30,3 +30,7 @@ def season_view(request):
     ctx = {'weekend_dates': '12, 13 июля', 'season_end': season_end,
            'home_teams': home_teams, 'guest_teams': guest_teams, 'users': users}
     return render(request, "season.html", context=ctx)
+
+
+def login_view(request):
+    return render(request, "login.html")

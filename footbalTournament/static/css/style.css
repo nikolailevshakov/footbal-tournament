@@ -504,3 +504,11 @@ footer .down_footer {
 .game .filler {
     height: 50vh;
 }
+
+/* PAGE LOGIN */
+/*----------------------------------------------------------------------------------------*/
+
+.login-form {
+   padding: 20vh 5vh 10vh 5vh;
+}
+
