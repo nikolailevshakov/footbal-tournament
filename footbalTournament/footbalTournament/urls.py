@@ -24,5 +24,6 @@ urlpatterns = [
     path('history/', views.history_view),
     path('memes/', views.memes_view),
     path('season/', views.season_view),
-    path('login/', views.login_view)
+    path('login/', views.login_view),
+    path('debug/', views.debug_view)
 ]

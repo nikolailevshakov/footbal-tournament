@@ -1,5 +1,8 @@
 from django.shortcuts import render
 from datetime import datetime
+import sys, os
+sys.path.append(os.path.abspath('..'))
+from my_app import models
 
 
 def home_view(request):
@@ -34,3 +37,9 @@ def season_view(request):
 
 def login_view(request):
     return render(request, "login.html")
+
+
+def debug_view(request):
+    all_users = models.User.objects.all()
+    context_list = {'users': all_users}
+    return render(request, 'debug.html', context=context_list)
