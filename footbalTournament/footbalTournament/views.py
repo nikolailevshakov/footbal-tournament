@@ -1,8 +1,10 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from django.urls import reverse
 from datetime import datetime
 import sys, os
 sys.path.append(os.path.abspath('..'))
 from my_app import models
+from my_app.forms import RegisterForm
 
 
 def home_view(request):
@@ -36,10 +38,22 @@ def season_view(request):
 
 
 def login_view(request):
-    return render(request, "login.html")
+    if request.method == 'POST':
+        form = RegisterForm(request.POST)
+        if form.is_valid():
+            print(form.cleaned_data)
+            return redirect(reverse('account'))
+    else:
+        form = RegisterForm()
+        print(form)
+    return render(request, "login.html", context={'form':form})
 
 
 def debug_view(request):
     all_users = models.User.objects.all()
     context_list = {'users': all_users}
-    return render(request, 'debug.html', context=context_list)
+    return render(request, 'debug.html')
+
+
+def account_view(request):
+    return render(request, "account.html", context={'form': form})

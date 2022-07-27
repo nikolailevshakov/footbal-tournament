@@ -25,5 +25,6 @@ urlpatterns = [
     path('memes/', views.memes_view),
     path('season/', views.season_view),
     path('login/', views.login_view),
-    path('debug/', views.debug_view)
+    path('debug/', views.debug_view),
+    path('account/', views.account_view, name='account')
 ]
