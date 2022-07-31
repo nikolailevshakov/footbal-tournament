@@ -1,14 +1,17 @@
 from django.shortcuts import render, redirect
-from django.urls import reverse
+from django.urls import reverse, reverse_lazy
 from datetime import datetime
 import sys, os
 sys.path.append(os.path.abspath('..'))
-from my_app import models
 from my_app.forms import RegisterForm
+from . import views
+from django.views.generic import TemplateView, CreateView, ListView
+from my_app.models import User
 
 
-def home_view(request):
-    return render(request, "index.html")
+# class based view
+class HomeView(TemplateView):
+    template_name = 'index.html'
 
 
 def game_view(request):
@@ -37,23 +40,27 @@ def season_view(request):
     return render(request, "season.html", context=ctx)
 
 
-def login_view(request):
-    if request.method == 'POST':
-        form = RegisterForm(request.POST)
-        if form.is_valid():
-            print(form.cleaned_data)
-            return redirect(reverse('account'))
-    else:
-        form = RegisterForm()
-        print(form)
-    return render(request, "login.html", context={'form':form})
+# model based classView
+class UserCreateView(CreateView):
+    model = User
+    fields = ["name", "email", "password"]
+    success_url = 'account/'
 
+# to list objects from db
+# class UserListView(ListView):
+#     model = User
+#     context_object_name = 'user_list'
 
-def debug_view(request):
-    all_users = models.User.objects.all()
-    context_list = {'users': all_users}
-    return render(request, 'debug.html')
+# def login_view(request):
+#     if request.method == 'POST':
+#         form = RegisterForm(request.POST)
+#         if form.is_valid():
+#             form.save()
+#             return redirect(reverse(views.account_view))
+#     else:
+#         form = RegisterForm()
+#     return render(request, "login.html", context={'form':form})
 
 
 def account_view(request):
-    return render(request, "account.html", context={'form': form})
+    return render(request, "account.html")

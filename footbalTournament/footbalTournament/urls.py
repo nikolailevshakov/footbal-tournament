@@ -19,12 +19,11 @@ from . import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.home_view),
+    path('', views.HomeView.as_view()),
     path('game/', views.game_view),
     path('history/', views.history_view),
     path('memes/', views.memes_view),
     path('season/', views.season_view),
-    path('login/', views.login_view),
-    path('debug/', views.debug_view),
-    path('account/', views.account_view, name='account')
+    path('login/', views.UserCreateView.as_view()),
+    path('login/account/', views.account_view)
 ]
