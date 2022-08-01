@@ -1,23 +1,40 @@
 from datetime import date, datetime, timedelta
 from Game import Game
-import props
-from Raiting import get_raitings
+import props, requests
+from bs4 import BeautifulSoup
+from raiting import get_teams_raitings
 
+saturday = "06.08.2022"
+sunday = "07.08.2022"
+weekend = [saturday, sunday]
 
 # collect game divs into the array
-def collect_games(driver):
-    all_games = []
-    for league_path in props.leagues:
-        driver.get(league_path)
-        driver.implicitly_wait(10)
-        div_games = driver.find_elements_by_class_name("event__match")
-        games = filter(None, [create_game(div_game) for div_game in div_games])
-        get_raitings(league_path, driver)
-        for game in games:
-            game.set_score()
-            all_games.append(game)
-            print(game.desc())
-    return all_games
+def collect_games():
+    r = requests.get(props.url_russia + props.calender)
+    soup = BeautifulSoup(r.text, 'html.parser')
+    matches_list = soup.find("div", class_="matches-list")
+    dates = matches_list.find_all("div", class_="matches-list-date")
+    for date in dates:
+        if date.text in weekend:
+            while date.next_sibling == ' ': date = date.next_sibling
+            while 'href' in date.next_sibling.attrs.keys():
+                print(date.next_sibling.text)
+                date = date.next_sibling
+            while date.next_sibling == ' ': date = date.next_sibling
+
+
+
+    # for league_path in props.leagues:
+    #     driver.get(league_path)
+    #     driver.implicitly_wait(10)
+    #     div_games = driver.find_elements_by_class_name("event__match")
+    #     games = filter(None, [create_game(div_game) for div_game in div_games])
+    #     get_teams_raitings(league_path, driver)
+    #     for game in games:
+    #         game.set_score()
+    #         all_games.append(game)
+    #         print(game.desc())
+    # return all_games
 
 
 # Parse div of the game in to the object Game
