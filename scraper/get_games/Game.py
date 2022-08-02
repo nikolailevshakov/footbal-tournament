@@ -8,6 +8,7 @@ class Game(object):
         self.team_1 = team_1
         self.team_2 = team_2
         self.score = 0
+        self.set_score()
 
     def desc(self):
         print(self.date + " " + self.time + " " + self.team_1 + " : " + self.team_2 + "--" + str(self.score))
@@ -20,5 +21,5 @@ class Game(object):
             self.desc()
             print("==================")
 
-    def serialize(self):
-        return str(self.time) + "," + self.team_1 + "," + self.team_2 + "," + str(self.score)
+    def __str__(self):
+        return "{} at {}, {}:{}, score {}".format(self.date, self.time, self.team_1, self.team_2, self.score)

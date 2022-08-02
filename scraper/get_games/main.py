@@ -1,14 +1,20 @@
 import props
-from gameFunctions import collect_games, sort_games, export_games
+from gameFunctions import collect_games, sort_games
 from datetime import date
 from raiting import get_teams_raitings
 
 today_date = date.today()
 
+saturday = "06.08.2022"
+sunday = "07.08.2022"
+weekend = [saturday, sunday]
 
-#get_teams_raitings(props.url_england)
-collect_games()
-
+all_games = []
+for url_league in props.leagues:
+    get_teams_raitings(url_league)
+    all_games += collect_games(url_league, weekend)
+gs = sort_games(all_games)
+for g in gs: print(g)
 #
 # all_games = collect_games(driver)
 #
