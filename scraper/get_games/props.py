@@ -13,7 +13,6 @@ leagues = [url_england, url_france, url_germany, url_spain, url_italy, url_russi
 
 days_before_saturday = 1
 days_before_sunday = 2
-results = '/results/'
 calender = '/scheduled/'
 table = '/standings/'
 

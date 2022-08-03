@@ -14,3 +14,5 @@ class Game:
 
     def set_result(self, result):
         self.result = result
+
+
