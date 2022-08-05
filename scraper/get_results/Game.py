@@ -9,10 +9,8 @@ class Game:
         self.result = ""
         self.prediction = ""
 
-    def desc(self):
-        print(self.date + " " + self.time + " " + self.team_1 + " : " + self.team_2 + "--" + str(self.result))
+    def __str__(self):
+        return self.date + " " + self.time + " " + self.team_1 + " : " + self.team_2 + "--" + str(self.result)
 
     def set_result(self, result):
         self.result = result
-
-

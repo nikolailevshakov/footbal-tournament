@@ -1,19 +1,31 @@
-import props
-from selenium.webdriver import Firefox
-from gameResults import GameResult
+import bs4.element
+from Game import Game
+import props, requests
+from bs4 import BeautifulSoup
+from GameResult import GameResult
 
 
-def get_results():
-    game_results = []
-    driver = Firefox(executable_path=props.path_to_driver)
-    for league_path in props.leagues:
-        driver.get(league_path + props.results)
-        driver.implicitly_wait(5)
-        div_games = driver.find_elements_by_class_name("event__match")
-        for div_game in div_games:
-            team_1 = div_game.text.split("\n")[1]
-            team_2 = div_game.text.split("\n")[2]
-            result = div_game.text.split("\n")[3]+div_game.text.split("\n")[4]
-            game_results.append(GameResult(team_1, team_2, result))
-    driver.quit()
-    return game_results
+def get_league_results(league_url: str, games: list[Game]) -> list[GameResult]:
+    r = requests.get(league_url + props.results)
+    soup = BeautifulSoup(r.text, 'html.parser')
+    matches_list = soup.find("div", class_="matches-list")
+    dates = matches_list.find_all("div", class_="matches-list-date")
+    games_results = []
+    for date in dates:
+        for g in games:
+            if g.date in dates:
+                while True:
+                    if isinstance(date.next_sibling, bs4.element.NavigableString):
+                        date = date.next_sibling
+                        continue
+                    if date.next_sibling.attrs['class'] == ['matches-list-date']:
+                        break
+                    game_result = create_game_result(date.next_sibling, g.team_1, g.team_2)
+                    games_results.append(game_result)
+                    date = date.next_sibling
+    return games_results
+
+
+def create_game_result(game_tag: bs4.element.Tag, team_1: str, team_2: str) -> GameResult:
+    score = game_tag.find("span", class_="score has-score").text.strip().replace(':', '')
+    return GameResult(team_1, team_2, score)

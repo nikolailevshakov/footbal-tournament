@@ -5,5 +5,5 @@ class GameResult():
         self.team_2 = team_2
         self.result = result
 
-    def desc(self):
-        print(self.team_1 + ":" + self.team_2 + " " + self.result)
+    def __str__(self):
+        return self.team_1 + ":" + self.team_2 + " " + self.result

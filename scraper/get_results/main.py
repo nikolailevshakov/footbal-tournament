@@ -1,53 +1,38 @@
-import urllib.request, ast
-from getPredictions import get_predictions
+from readGames import read_games, write_scores, read_predictions
 import props
-from Game import Game
-from getResults import get_results
+from getResults import get_league_results
 from calcPoints import calc_points
 
 
-# get top_games from get_games
-top_games_str = urllib.request.urlopen(props.top_games_url).read().decode('utf-8')
-print("Get this string --->", top_games_str)
-
-# turn to dictionary
-top_games_dict = ast.literal_eval(top_games_str)
-top_games = []
-
-# convert string to Game object
-for day in top_games_dict.keys():
-    for game_string in top_games_dict[day]:
-        time = game_string.split(",")[0]
-        team_1 = game_string.split(",")[1]
-        team_2 = game_string.split(",")[2]
-        top_games.append(Game(day, time, team_1, team_2))
-
-for g in top_games:
-    g.desc()
+# read chosen games from the txt file
+games_read = read_games()
 
 # get results
-all_games_results = get_results()
-print(len(all_games_results))
+all_games_results = []
+for league in props.leagues:
+    all_games_results += get_league_results(league, games_read)
+# print(len(all_games_results))
 
-#for g in all_games_results:
-#    g.desc()
+for game_result in all_games_results:
+    print(game_result)
 
-for g in top_games:
-    for g_res in all_games_results:
-        if g.team_1 == g_res.team_1 and g.team_2 == g_res.team_2:
-            g.set_result(g_res.result)
+# set results to games
+for game in games_read:
+    for game_res in all_games_results:
+        if game.team_1 == game_res.team_1 and game.team_2 == game_res.team_2:
+            game.set_result(game_res.result)
 
-# add top games results to one array
+# list of games results
 top_games_results = []
-for g in top_games:
-    g.desc()
-    top_games_results.append(g.result)
+for game in games_read:
+    top_games_results.append(game.result)
 
-for result in top_games_results:
-    print(result)
+# get predictions from users -> dict[player_name] = list[game_prediction, ...]
+players_predictions = read_predictions()
 
-game_predictions_dict = get_predictions()
-
+# get dict of name=score for each player
 name_points_dict = {}
-for name in game_predictions_dict.keys():
-    name_points_dict[name] = calc_points(game_predictions_dict[name], top_games_results)
+for name in players_predictions.keys():
+    name_points_dict[name] = calc_points(players_predictions[name], top_games_results)
+
+write_scores(name_points_dict)

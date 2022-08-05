@@ -1,11 +1,7 @@
-from datetime import date, datetime, timedelta
-
 import bs4.element
-
 from Game import Game
 import props, requests
 from bs4 import BeautifulSoup
-from raiting import get_teams_raitings
 
 
 # collect game divs into the array
