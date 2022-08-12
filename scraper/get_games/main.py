@@ -3,11 +3,19 @@ from gameFunctions import collect_games, sort_games
 from datetime import date
 from raiting import get_teams_raitings
 import json
+import datetime
 
 today_date = date.today()
 
-saturday = "06.08.2022"
-sunday = "07.08.2022"
+# saturday = "13.08.2022"
+# sunday = "14.08.2022"
+# get next saturday and sunday based on the today's date
+today = datetime.date.today()
+saturday = today + datetime.timedelta((5-today.weekday()) % 7)
+sunday = today + datetime.timedelta((6-today.weekday()) % 7)
+saturday = saturday.strftime("%d.%m.%Y")
+sunday = sunday.strftime("%d.%m.%Y")
+
 weekend = [saturday, sunday]
 
 all_games = []

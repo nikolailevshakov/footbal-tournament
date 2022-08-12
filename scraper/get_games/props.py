@@ -11,8 +11,6 @@ url_europe = "https://www.flashscore.ru/football/Europa-League"
 
 leagues = [url_england, url_france, url_germany, url_spain, url_italy, url_russia]
 
-days_before_saturday = 1
-days_before_sunday = 2
 calender = '/scheduled/'
 table = '/standings/'
 
