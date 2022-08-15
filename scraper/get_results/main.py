@@ -11,7 +11,9 @@ games_read = read_games()
 all_games_results = []
 for league in props.leagues:
     all_games_results += get_league_results(league, games_read)
-# print(len(all_games_results))
+if len(all_games_results) == 0:
+    print("ERROR: Can't get games results")
+
 
 for game_result in all_games_results:
     print(game_result)

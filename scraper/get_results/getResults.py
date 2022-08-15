@@ -13,7 +13,8 @@ def get_league_results(league_url: str, games: list[Game]) -> list[GameResult]:
     games_results = []
     for date in dates:
         for g in games:
-            if g.date in dates:
+            if isinstance(date, bs4.element.NavigableString): break
+            if g.date == date.text:
                 while True:
                     if isinstance(date.next_sibling, bs4.element.NavigableString):
                         date = date.next_sibling
@@ -21,6 +22,7 @@ def get_league_results(league_url: str, games: list[Game]) -> list[GameResult]:
                     if date.next_sibling.attrs['class'] == ['matches-list-date']:
                         break
                     game_result = create_game_result(date.next_sibling, g.team_1, g.team_2)
+                    print(game_result)
                     games_results.append(game_result)
                     date = date.next_sibling
     return games_results

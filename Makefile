@@ -11,6 +11,3 @@ get_games:
 
 get_results:
 	python scraper/get_results/main.py
-
-temp_run:
-	python scraper/temp.py
