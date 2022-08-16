@@ -6,17 +6,14 @@ from calcPoints import calc_points
 
 # read chosen games from the txt file
 games_read = read_games()
+print("INFO: Read {} games from txt document".format(len(games_read)))
 
 # get results
 all_games_results = []
 for league in props.leagues:
     all_games_results += get_league_results(league, games_read)
-if len(all_games_results) == 0:
-    print("ERROR: Can't get games results")
 
-
-for game_result in all_games_results:
-    print(game_result)
+print("INFO: Collected results of {} games".format(len(all_games_results)))
 
 # set results to games
 for game in games_read:
@@ -24,15 +21,16 @@ for game in games_read:
         if game.team_1 == game_res.team_1 and game.team_2 == game_res.team_2:
             game.set_result(game_res.result)
 
-# list of games results
+# list of games results -> list[str]
 top_games_results = []
 for game in games_read:
     top_games_results.append(game.result)
 
-# get predictions from users -> dict[player_name] = list[game_prediction, ...]
+
+#get predictions from users -> dict[player_name] = list[game_prediction1->str, ...]
 players_predictions = read_predictions()
 
-# get dict of name=score for each player
+#get dict of name=score for each player
 name_points_dict = {}
 for name in players_predictions.keys():
     name_points_dict[name] = calc_points(players_predictions[name], top_games_results)

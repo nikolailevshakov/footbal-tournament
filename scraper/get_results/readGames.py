@@ -32,5 +32,5 @@ def read_predictions() -> dict[str]:
 def write_scores(name_points_dict: dict[str]):
     with open('../player_scores.txt', 'w', encoding='utf-8') as f:
         for name, score in name_points_dict.items():
-            f.write(name + " " + score)
+            f.write(name + " " + str(score))
             f.write('\n')
